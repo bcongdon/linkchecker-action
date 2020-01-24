@@ -1,0 +1,12 @@
+name: "Hello World"
+description: "Checks links"
+inputs:
+  site: # id of input
+    description: "The site to check"
+    required: true
+runs:
+  using: "docker"
+  image: "docker://linkchecker/linkchecker:latest"
+  args:
+    - ${{ inputs.site }}
+    - --verbose
